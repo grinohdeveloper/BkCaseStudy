@@ -2,6 +2,7 @@
 This project access data source via APIs online and output transactions list and aggregated transaction summary based on location (City). The solution exposes REST - GET protocol which when invoked interacts with two REST APIs (Json and Xml) to formulate the final output. The final output is text/csv and also generates csv files which are saved in a folder. It also interacts with geogle geo-location API to get city name using latitude and longitude values. To access google API a security key is generated in Geo-Location API platform. Since google geo-location API restricts number of request per hour, the program maintains a local copy of city name based on latitude and longitude in a json format. In case the geo-location API is unavailable or doesn't respond with desired results, city name is retrieved from this file. This local copy of cities is preloaded in memory to ensure efficiency is maintained.
 
 #Implementation
+
 The solution is coded using JAVA EE.
 It uses Executor Service to expose an HttpServer where the GET API Endpoint is defined. Properties such as back log limit, multi-threading etc. are implemented here.
 The service layer is used to orchestrate customer data and transaction data into an output lists based on user requirement.
@@ -11,6 +12,7 @@ There is a configuration file which maintains different properties such various 
 It also generates log file which are stored in Logs folder.
 
 #API Endpoints
+
 The solution provides 2 url to achieve different operation.
 Both APIs implements REST - GET method with no parameters required.
    1. http://localhost:9995/bkBCaseStudy/interview01/transactions
